@@ -28,7 +28,7 @@ public class GetRequestUsage extends TestApplication {
     public void getRequest() throws IOException {
         FetchSourceContext context = new FetchSourceContext(true, new String[]{"address"}, null);
 
-        GetRequest request = new GetRequest("bank").id("1").storedFields("_source", "_id");
+        GetRequest request = new GetRequest("bank").id("5").storedFields("_source");
         request.fetchSourceContext(context);
         GetResponse response = restHighLevelClient.get(request, RequestOptions.DEFAULT);
         System.out.println(JSON.toJSONString(response));

@@ -33,7 +33,7 @@ public class SettingRequestUsage extends TestApplication {
         GetSettingsRequest request = new GetSettingsRequest().indices("bank");
         GetSettingsResponse response = restHighLevelClient.indices().getSettings(request, RequestOptions.DEFAULT);
         String autoCreate = response.getSetting("bank", "action.auto_create_index");
-        System.out.println(autoCreate);
+        System.out.println(JSON.toJSONString(response));
     }
 
     @Test
